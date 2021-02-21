@@ -1,0 +1,19 @@
+Connect-AzAccount
+
+$ResourceGroupName = 'rg-iot-arm-eas'
+$Location = 'eastasia'
+$Tags = @{"workload"="iot"; "env"="dev"}
+$TemplateFile = "azuredeploy.json"
+$Today=Get-Date -Format "MM-dd-yyyy"
+$DeploymentName="deploymentscript-"+"$Today"
+
+New-AzResourceGroup -Name $ResourceGroupName -Location $Location -Tag $Tags
+
+New-AzResourceGroupDeployment `
+  -ResourceGroupName $ResourceGroupName `
+  -Name $DeploymentName `
+  -TemplateFile $TemplateFile `
+  -Tag $Tags
+
+
+
