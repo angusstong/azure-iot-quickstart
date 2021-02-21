@@ -22,6 +22,8 @@ In this workshop, you will:
 
 ## Technical Solution Architecture
 
+![The solution Architecture diagram is described in the text following the diagram.](/images/IoT_Workshop-Agenda_and_Intro.png)
+
 The solution begins with 2 **IoT Devices** which are responsible for reading device telemetry such as temperature and humidity, etc., simulated by **custom C\# simulators on Windows and Node.js simulators on online Raspberry Pi**.
 
 These 2 devices are then connected to **IoT Hub** that acts as a central message hub for bi-directional communication between your application or Web App and the devices it manages.
@@ -266,7 +268,7 @@ In this exercise, you will learn how to connect devices to **IoT Hub** through *
        ![processCommand method](/images/01-HOL/image30.png)
 
      - Complete te C2D message to IoT Hub.
-       ` await _deviceClient.CompleteAsync(receivedMessage); `
+       `await _deviceClient.CompleteAsync(receivedMessage);`
        ![Complete C2D message](/images/01-HOL/image31.png)
 
      - Let's press the **F5** to start debuggine and check the output of console
@@ -448,7 +450,7 @@ In this exercise, you will learn how to connect devices to **IoT Hub** through *
 
     - You can use the same C2D commands as above to test the Device-to-Cloud (C2D) messages.
       (see the c2d-command.txt under Scripts folder)
-      ` {"command": "TURN_ONOFF", "value":"1", "time":"2017-11-29T10:10:10.123Z"} or {"command": "TURN_ONOFF", "value":"0", "time":"2017-11-29T10:10:10.123Z"} or {"command": "TEMPERATURE_ALERT", "value":"50", "time":"2017-11-29T10:10:10.123Z"} `
+      `{"command": "TURN_ONOFF", "value":"1", "time":"2017-11-29T10:10:10.123Z"} or {"command": "TURN_ONOFF", "value":"0", "time":"2017-11-29T10:10:10.123Z"} or {"command": "TEMPERATURE_ALERT", "value":"50", "time":"2017-11-29T10:10:10.123Z"}`
       ![Send C2D message to RpiOnlineSimulator](/images/01-HOL/image55.png)
       ![Output in VSC](/images/01-HOL/image56.png)
       ![Output in RpiOnlineSimulator](/images/01-HOL/image57.png)
@@ -489,7 +491,7 @@ In this exercise, you will learn how to perform historic data processing in Stre
 
 1.  Login Azure Portal https://portal.azure.com
 
-1.      Search the **SQL Database**.
+1.       Search the **SQL Database**.
 
     ![Search SQL Database](/images/02-HOL/image3.png)
 
@@ -761,8 +763,6 @@ In this exercise, you will learn how to send the alarm message from Cloud to Dev
    - JSON Content
      ![Blob in JSON format](images/03-HOL/image8.png)
 
-
-
 ### Task 2: Create a Service Bus for Temperature Alert
 
 1. Search and **Create** the **Service Bus**
@@ -785,8 +785,6 @@ In this exercise, you will learn how to send the alarm message from Cloud to Dev
 
      ![Save connection string of Service Bus](images/03-HOL/image12.png)
 
-
-
 ### Task 3: Create new consumer groups of IoT Hub
 
 1. Find your **IoT Hub**
@@ -802,8 +800,6 @@ In this exercise, you will learn how to send the alarm message from Cloud to Dev
    ![IoT Hub consumer group](images/03-HOL/image14.png)
 
    - Don’t forget to Save the changed properties.
-
-
 
 ### Task 4: Create a Stream Analytics Job for Alarm Message
 
@@ -988,8 +984,6 @@ In this exercise,you will learn how to create a **streaming dataset** in Power B
 1. There is a new dataset **Simulator** in your account
 
    ![New dataset Simulator](images/04-HOL/image5.png)
-
-
 
 ### Task 2: Make a Power BI real-time dashboard
 
@@ -1345,8 +1339,6 @@ In this exercise, you will learn how to perform Web App Customization and Signal
 
 1. Build and run the project. For now, it is ready for the real time data. Next, let’s update the Event Processor Host.
 
-
-
 ### Task 4: Update Event Processor Host to push the telemetry data
 
 1. Add DashboardSample local url with port number to TelemetryProcessor / App.config
@@ -1595,8 +1587,6 @@ In this exercise, you will learn how to publish the DashboardSample Web App and 
    - DashboardSample has been published on Internet
      ![DashboardSample published](images/07-HOL/image10.png)
 
-
-
 ### Task 3: Publish the Alert Service Bus and Event Processor Host projects as Azure Webjob
 
 1. Update the App.config in Alert Service Bus project
@@ -1646,8 +1636,6 @@ In this exercise, you will learn how to publish the DashboardSample Web App and 
 1. Now the production website works well.
 
    ![Final result](images/07-HOL/image23.png)
-
-
 
 ### Task 4: Watch the log of WebJob in Azure Portal
 
